@@ -1,0 +1,29 @@
+Source: libsort-merge-perl
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 7), perl (>= 5.10) | libmodule-build-perl
+Build-Depends-Indep: perl
+Maintainer: Randy Hancock <rhancock@>
+Standards-Version: 3.8.3
+Homepage: http://search.cpan.org/dist/Sort-Merge/
+
+Package: libsort-merge-perl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}
+Description: general merge sort
+ Merge sorting is a technique for merging together multiple input streams,
+ each of which is sorted, into one larger output stream, still sorted.
+ Sort::Merge implements that algorithm.
+ .
+ Note the large caveat above: the inputs must already be sorted. If the inputs
+ aren't sorted, you'll need to sort them yourself first, in which case a merge
+ sort may not be the right algorithm for the job.
+ .
+ Sort::Merge was designed to give you, the programmer, control over where your
+ data comes from, and where it goes -- it's simply supposed to sort it, and
+ not fetch it from files, parse out sort keys, etc, etc. There's at least one
+ merge-sorting module already on CPAN, File::MergeSort, but I wanted one that
+ I could use to sort together multiple files that were of different formats,
+ and not line-oriented formats either.
+ .
+ This description was automagically extracted from the module by dh-make-perl.
